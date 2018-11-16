@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+                            
+<!--     Escanea los paquetes indicados y registra las clases con anotaciones -->
+<!--     @controller,@service,@repository,@component -->
+    <context:component-scan base-package="mx.com.sccalaya.web.controller"></context:component-scan>
+<!--     Realiza las configuraciones necesarias para el funcionamiento de las clases controller -->
+    <mvc:annotation-driven/>
+     
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+<!--     Cada bean que nosotros creamos, tiene un scope espesifico -->
+<!--         -Singleton: solo se va a crear una instancia de el  (DEFAULT) -->
+<!--         -prototype: se va a crear una instancia por cada vez que la pida -->
+<!--         -session: se creara una instancia por cada session -->
+<!--         -globalsession: se creara una instancia por cada session global http -->
+<!--     PARA INYECTAR LOS OBJETOS DEFINIDOS PODEMOS HACERLO -->
+<!--         -Con un BeanFactory    (es un objeto que nos inyectara un objeto de esa fabrica) -->
+<!--         -Con un applicationContext (es un objeto que nos inyectara un objeto  -->
+<!--                                     de cualquiera de los definidos por su ID) -->
+<!--         -Con anotacion @Autowired (es una anotacion con la cual inyectaremos un objeto -->
+<!--                                     de cualquiera de los definidos por el tipo de la variable) -->
+ 
+</beans>
