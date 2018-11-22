@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import mx.com.sccalaya.model.Usuario;
+import mx.com.sccalaya.model.Usuarios;
 import mx.com.sccalaya.service.UsuariosService;
 
 @Controller
@@ -31,8 +31,8 @@ public class LoginController {
 	@RequestMapping(value="/searchUser",method=RequestMethod.POST)
 	ModelAndView buscarUsuario(Integer id) {
 		ModelAndView mav = new ModelAndView();
-		Usuario user = service.findUsuarioById(id);
-		mav.addObject("usuario",user);
+		Usuarios usuario = service.findUsuarioById(id);
+		mav.addObject("usuario",usuario);
 		mav.setViewName("logeado");
 		return mav;
 	}

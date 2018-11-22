@@ -1,8 +1,8 @@
 package mx.com.sccalaya.repository;
 
-import mx.com.sccalaya.model.Usuario;
+import mx.com.sccalaya.model.Usuarios;
 
 public interface UsuarioRepository {
 
-	Usuario findById(Integer id);
+	Usuarios findById(Integer id);
 }

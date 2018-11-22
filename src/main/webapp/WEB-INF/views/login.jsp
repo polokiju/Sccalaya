@@ -6,7 +6,7 @@
 <body>
 <h2>Hello World!</h2>
 
-	<form action="/Sccalaya/searchUser">
+	<form action="/Sccalaya/searchUser" method="POST">
 	<label>Id: </label>
 	<input type="text" name="id">
 	<br>

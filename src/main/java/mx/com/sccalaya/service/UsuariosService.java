@@ -1,8 +1,8 @@
 package mx.com.sccalaya.service;
 
-import mx.com.sccalaya.model.Usuario;
+import mx.com.sccalaya.model.Usuarios;
 
 public interface UsuariosService {
 
-	Usuario findUsuarioById(Integer id);
+	Usuarios findUsuarioById(Integer id);
 }
